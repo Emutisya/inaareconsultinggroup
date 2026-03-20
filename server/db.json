@@ -1,0 +1,27 @@
+{
+  "bookings": [
+    {
+      "id": "1773968729129-49302",
+      "name": "Elizabeth Waeni Mutisya",
+      "email": "ELIZABETH.WAENI.M@GMAIL.COM",
+      "date": "Day 8",
+      "time": "12:00 PM",
+      "purpose": "csdzcv",
+      "status": "new",
+      "createdAt": "2026-03-20T01:05:29.129Z"
+    }
+  ],
+  "messages": [],
+  "content": {
+    "home": {
+      "headline": "Rebirthing Lives. Building Generational Greatness.",
+      "subtext": "We reshape leaders, rebuild systems, and restore value—transforming individuals and organizations into scalable, resilient engines of measurable impact across diverse markets."
+    },
+    "about": {
+      "description": "We are a leadership and transformation advisory firm committed to restoring value, shaping perspective, and building enduring systems across diverse markets."
+    },
+    "services": {
+      "description": "Outcome-focused advisory and development services designed to strengthen leadership, institutions, and execution excellence."
+    }
+  }
+}
