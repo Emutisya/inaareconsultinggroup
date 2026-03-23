@@ -254,9 +254,9 @@ const HomePage = () => {
         </RevealOnScroll>
       </section>
 
-      <section className="section-shell rhythm-open flow-section pt-0">
-        <div className="layout-offset items-start">
-          <RevealOnScroll>
+      <section className="section-shell rhythm-open flow-section pt-0 pb-0 founder-section-tight">
+        <div className="profile-section items-start">
+          <RevealOnScroll className="profile-image">
             <div className="gold-ring floating-layer relative mx-auto w-fit self-start overflow-hidden rounded-2xl border border-gold/35 bg-white p-4 shadow-[0_30px_72px_rgba(0,0,0,0.16)] sm:-mt-16 sm:p-5 lg:ml-8">
               <img
                 src="/ekyengo1.jpg"
@@ -266,25 +266,31 @@ const HomePage = () => {
               <div className="pointer-events-none absolute left-5 top-5 h-6 w-24 bg-gradient-to-r from-gold/85 to-gold/10" />
             </div>
           </RevealOnScroll>
-          <RevealOnScroll delay={120}>
-            <p className="section-kicker">Founder Highlight</p>
-            <h3 className="gold-trace mt-3 inline-block font-serif text-6xl font-bold text-ivory md:text-7xl">{founderProfile.name}</h3>
-            <p className="mt-5 max-w-2xl text-lg text-muted">{founderProfile.summary}</p>
-            <div className="mt-6 grid gap-3 sm:grid-cols-2">
-              {(founderProfile.certifications || []).slice(0, 4).map((item) => (
-                <p key={item} className="rounded-full bg-white px-4 py-2 text-xs uppercase tracking-[0.14em] text-gold shadow-[0_8px_18px_rgba(0,0,0,0.06)]">
-                  {item}
-                </p>
-              ))}
+
+          <RevealOnScroll className="profile-content" delay={120}>
+            <div>
+              <p className="section-kicker">Founder Highlight</p>
+              <h3 className="gold-trace mt-3 inline-block font-serif text-6xl font-bold text-ivory md:text-7xl">{founderProfile.name}</h3>
+              <p className="mt-5 max-w-2xl text-lg text-muted">{founderProfile.summary}</p>
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                {(founderProfile.certifications || []).slice(0, 4).map((item) => (
+                  <p key={item} className="rounded-full bg-white px-4 py-2 text-xs uppercase tracking-[0.14em] text-gold shadow-[0_8px_18px_rgba(0,0,0,0.06)]">
+                    {item}
+                  </p>
+                ))}
+              </div>
             </div>
-            <blockquote className="mt-12 border-l-2 border-gold/70 bg-[radial-gradient(circle_at_10%_50%,rgba(247,214,224,0.24),transparent_62%)] pl-6 font-serif text-5xl italic leading-[1.06] text-ivory/95 md:sticky md:top-24">
+          </RevealOnScroll>
+
+          <RevealOnScroll className="profile-quote" delay={180}>
+            <blockquote className="bg-[radial-gradient(circle_at_10%_50%,rgba(247,214,224,0.24),transparent_62%)] font-serif text-5xl italic leading-[1.06] text-ivory/95">
               “{founderProfile.quote}”
             </blockquote>
           </RevealOnScroll>
         </div>
       </section>
 
-      <section className="section-shell rhythm-open flow-section pt-0">
+      <section className="section-shell rhythm-open flow-section pt-0 next-step-section-tight">
         <div className="wow-panel floating-layer text-center md:text-left">
           <p className="relative z-10 text-xs uppercase tracking-[0.24em] text-gold">Next Step</p>
           <h3 className="relative z-10 mt-4 font-serif text-4xl font-bold text-ivory md:text-6xl">
