@@ -61,8 +61,8 @@ const PublicationDetailPage = () => {
   const publicationDate = resolvePublicationDate(publication)
 
   return (
-    <section className="section-shell pt-8">
-      <div className="mx-auto w-full max-w-4xl">
+    <section className="section-shell flow-section signature-motif pt-8">
+      <div className="mx-auto w-full max-w-5xl">
         <RevealOnScroll>
           <Link
             to="/publications"
@@ -71,11 +71,12 @@ const PublicationDetailPage = () => {
             ← Back to Publications
           </Link>
 
-          <header className="mt-8 border-b border-gold/15 pb-8">
+          <header className="section-blush mt-8 pb-8">
             <p className="text-xs uppercase tracking-[0.2em] text-gold">{publication.category}</p>
-            <h1 className="mt-4 font-serif text-4xl font-bold text-ivory md:text-6xl">
+            <h1 className="mt-4 display-title max-w-4xl">
               {publication.title}
             </h1>
+            <div className="accent-divider mt-6 max-w-[220px]" />
             {publicationDate && (
               <p className="mt-4 text-sm uppercase tracking-[0.12em] text-muted">
                 {formatDate(publicationDate)}
@@ -86,7 +87,7 @@ const PublicationDetailPage = () => {
 
         {paragraphs.length > 0 && (
           <RevealOnScroll delay={90}>
-            <article className="publication-prose mt-10 space-y-6 text-lg leading-relaxed text-muted">
+            <article className="publication-prose layout-center mt-12 space-y-7 text-xl text-muted">
               {paragraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
@@ -96,12 +97,12 @@ const PublicationDetailPage = () => {
 
         {paragraphs.length === 0 && publication.pdfUrl && (
           <RevealOnScroll delay={140}>
-            <section className="mt-12 rounded-[16px] border border-gold/20 bg-charcoal/50 p-4 md:p-6">
-              <h2 className="font-serif text-2xl text-ivory">Publication PDF</h2>
+            <section className="offset-panel mt-12 p-4 md:p-6">
+              <h2 className="gold-trace inline-block font-serif text-3xl text-ivory">Publication PDF</h2>
               <iframe
                 src={publication.pdfUrl}
                 title={`${publication.title} PDF`}
-                className="mt-4 h-[70vh] w-full rounded-[12px] border border-gold/15 bg-ink"
+                className="mt-5 h-[70vh] w-full rounded-[12px] border border-gold/15 bg-ink"
               />
             </section>
           </RevealOnScroll>

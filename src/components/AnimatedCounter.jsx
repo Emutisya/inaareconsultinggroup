@@ -20,7 +20,7 @@ const AnimatedCounter = ({ end, suffix = '', label }) => {
   }, [end])
 
   return (
-    <article className="premium-card text-center">
+    <article className="open-feature text-center">
       <p className="font-serif text-5xl font-bold text-gold">{value}{suffix}</p>
       <p className="mt-3 text-sm uppercase tracking-[0.18em] text-muted">{label}</p>
     </article>

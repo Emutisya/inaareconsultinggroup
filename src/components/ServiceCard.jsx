@@ -35,15 +35,15 @@ const ServiceCard = ({ title, description }) => {
   return (
     <article
       ref={cardRef}
-      className="premium-card service-tilt h-full"
+      className="group service-tilt h-full rounded-[18px] bg-[linear-gradient(160deg,rgba(255,255,255,0.96),rgba(255,250,252,0.84))] px-5 py-5 shadow-[0_12px_28px_rgba(0,0,0,0.07)]"
       onMouseMove={onMove}
       onMouseLeave={onLeave}
     >
-      <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-gold/30 bg-ink/70 text-lg text-gold">
+      <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-gold/30 bg-[#fff5f7] text-lg text-gold transition-all duration-300 group-hover:-translate-y-0.5 group-hover:border-[#c67b8d]/50 group-hover:shadow-[0_6px_20px_rgba(232,175,193,0.28)]">
         {iconByTitle[title] || '◈'}
       </span>
-      <h3 className="mt-5 font-serif text-2xl text-ivory">{title}</h3>
-      <p className="text-measure mt-3 leading-relaxed text-muted">{description}</p>
+      <h3 className="gold-trace mt-5 inline-block font-serif text-2xl font-semibold text-ivory">{title}</h3>
+      <p className="text-measure mt-4 leading-relaxed text-muted">{description}</p>
     </article>
   )
 }

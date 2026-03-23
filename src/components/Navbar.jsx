@@ -5,9 +5,10 @@ import { navLinks } from '../data/siteContent'
 
 const Navbar = () => {
   const [open, setOpen] = useState(false)
+  const filteredLinks = navLinks.filter((link) => link.name !== 'Services')
 
   const getLinkStyle = ({ isActive }) =>
-    `relative text-[13px] uppercase tracking-[0.13em] transition-colors duration-300 ${isActive ? 'text-gold' : 'text-ivory/90 hover:text-gold'}`
+    `link-underline relative text-[13px] uppercase tracking-[0.13em] ${isActive ? 'active-link text-gold' : 'text-ivory/90 hover:text-[#c67b8d]'}`
 
   return (
     <header className="sticky top-0 z-50 border-b border-gold/15 bg-ink/90 backdrop-blur-md">
@@ -26,7 +27,7 @@ const Navbar = () => {
 
         <button
           type="button"
-          className="rounded-[12px] border border-gold/40 px-4 py-2 text-sm text-ivory md:hidden"
+          className="rounded-[12px] border border-gold/40 px-4 py-2 text-sm text-ivory hover:-translate-y-0.5 hover:scale-[1.02] hover:border-[#c67b8d]/60 hover:text-[#c67b8d] md:hidden"
           onClick={() => setOpen((prev) => !prev)}
           aria-label="Toggle navigation"
         >
@@ -34,7 +35,7 @@ const Navbar = () => {
         </button>
 
         <ul className="hidden items-center gap-6 md:flex">
-          {navLinks.map((link) => (
+          {filteredLinks.map((link) => (
             <li key={link.name}>
               <NavLink to={link.path} className={getLinkStyle}>
                 {link.name}
@@ -46,13 +47,13 @@ const Navbar = () => {
 
       {open && (
         <ul className="space-y-2 border-t border-gold/15 px-6 py-4 md:hidden">
-          {navLinks.map((link) => (
+          {filteredLinks.map((link) => (
             <li key={link.name}>
               <NavLink
                 to={link.path}
                 className={({ isActive }) =>
                   `block rounded-md px-3 py-2 text-sm transition-colors duration-300 ${
-                    isActive ? 'bg-gold/15 text-gold' : 'text-ivory/90 hover:bg-gold/10 hover:text-gold'
+                    isActive ? 'bg-gold/15 text-gold' : 'text-ivory/90 hover:bg-[#c67b8d]/10 hover:text-[#c67b8d]'
                   }`
                 }
                 onClick={() => setOpen(false)}

@@ -18,7 +18,7 @@ const LogoMark = ({ className = 'h-14 w-16' }) => {
   if (!imageMissing) {
     return (
       <div
-        className={`gold-ring inline-flex shrink-0 items-center justify-center overflow-hidden rounded-[12px] bg-ivory/95 p-1 ${className}`}
+        className={`inline-flex shrink-0 items-center justify-center overflow-hidden rounded-[12px] bg-transparent p-0 ${className}`}
       >
         <img
           src={logoCandidates[logoIndex]}
