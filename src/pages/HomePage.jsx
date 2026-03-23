@@ -46,7 +46,7 @@ const HomePage = () => {
         <div className="pointer-events-none absolute -right-[80px] top-[8%] h-[520px] w-[520px] rounded-full bg-yellow-200/55 blur-[130px]" />
         <div className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-[#d49a00]/70 to-transparent md:inset-x-12" />
 
-        <div className="hero-left hero-content">
+        <div className="hero-left hero-text hero-content">
           <h1 className="max-w-[11ch] font-serif text-[clamp(3.2rem,7.2vw,6rem)] leading-[1.01] text-[#111111]">
             <span className="block whitespace-nowrap opacity-0 animate-[fadeUp_0.8s_ease_forwards]">Rebirthing Lives.</span>
             <span className="block opacity-0 animate-[fadeUp_0.8s_ease_0.18s_forwards]">Building</span>
@@ -65,7 +65,7 @@ const HomePage = () => {
             We reshape leaders, rebuild systems, and restore value, transforming individuals and organizations into scalable, enduring institutions.
           </p>
 
-          <div className="mt-10 flex flex-wrap items-center gap-4 opacity-0 animate-[fadeUp_0.8s_ease_0.64s_forwards] md:flex-nowrap">
+          <div className="hero-buttons mt-10 flex flex-wrap items-center gap-4 opacity-0 animate-[fadeUp_0.8s_ease_0.64s_forwards] md:flex-nowrap">
             <Link to="/booking" className="button-primary whitespace-nowrap rounded-full px-7 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-white">
               Schedule Consultation
             </Link>
@@ -138,9 +138,9 @@ const HomePage = () => {
         <div className="glow glow-pink" />
       </section>
 
-      <section id="what-we-do" className="bg-white px-6 py-32 md:px-12">
-        <div className="mx-auto max-w-5xl">
-          <div className="mb-20">
+      <section id="what-we-do" className="services-section bg-white px-6 md:px-12">
+        <div className="services-container">
+          <div className="services-header">
             <p className="mb-4 text-xs uppercase tracking-[0.25em] text-yellow-600">
               What We Do
             </p>
@@ -157,7 +157,7 @@ const HomePage = () => {
             <div className="mt-6 h-[2px] w-20 bg-yellow-500" />
           </div>
 
-          <div className="divide-y divide-gray-200">
+          <div className="services-list">
             {[
               {
                 title: 'Coaching & Mentorship',
@@ -178,19 +178,19 @@ const HomePage = () => {
             ].map((item, i) => (
               <div
                 key={i}
-                className="group flex flex-col gap-6 py-10 transition-all duration-300 hover:translate-x-2 md:flex-row md:items-center md:justify-between"
+                className="service-item group flex flex-col gap-4 transition-all duration-300 hover:translate-x-1 md:flex-row md:items-center md:justify-between"
               >
-                <div className="flex items-start gap-6">
-                  <span className="font-serif text-xl text-yellow-500">
+                <div className="flex items-start gap-4">
+                  <span className="service-number font-serif text-yellow-500">
                     {String(i + 1).padStart(2, '0')}
                   </span>
 
-                  <h3 className="font-serif text-2xl transition group-hover:text-yellow-600">
+                  <h3 className="service-title font-serif text-2xl transition group-hover:text-yellow-600">
                     {item.title}
                   </h3>
                 </div>
 
-                <p className="max-w-md text-sm leading-relaxed text-gray-600">
+                <p className="service-description max-w-md text-sm text-gray-600">
                   {item.desc}
                 </p>
               </div>
